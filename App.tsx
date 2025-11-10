@@ -201,7 +201,7 @@ export default function App() {
   const renderStructureApproval = () => (
     <div className="space-y-6">
         <h2 className="text-2xl font-bold text-brand-light">Estrutura Proposta</h2>
-        <div className="prose prose-invert max-w-none bg-brand-surface p-4 rounded-md border border-brand-border max-h-[50vh] overflow-y-auto">
+        <div className="prose prose-invert max-w-none bg-brand-surface p-4 rounded-md border border-brand-border max-h-[50vh] overflow-y-auto whitespace-pre-wrap">
             <ReactMarkdown>{state.structure}</ReactMarkdown>
         </div>
         {state.showSuggestions.structure && (

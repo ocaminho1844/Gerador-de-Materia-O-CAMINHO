@@ -141,8 +141,8 @@ export async function generateImages(chat: Chat): Promise<GeneratedImage[]> {
     for (const prompt of imagePrompts) {
         try {
             const [resp16x9, resp9x16] = await Promise.all([
-                ai.models.generateImages({ model: 'imagen-4.0-generate-001', prompt, config: { aspectRatio: '16:9' } }),
-                ai.models.generateImages({ model: 'imagen-4.0-generate-001', prompt, config: { aspectRatio: '9:16' } }),
+                ai.models.generateImages({ model: 'imagen-4.0-generate-001', prompt, config: { numberOfImages: 1, outputMimeType: 'image/jpeg', aspectRatio: '16:9' } }),
+                ai.models.generateImages({ model: 'imagen-4.0-generate-001', prompt, config: { numberOfImages: 1, outputMimeType: 'image/jpeg', aspectRatio: '9:16' } }),
             ]);
 
             const src16x9 = `data:image/jpeg;base64,${resp16x9.generatedImages[0].image.imageBytes}`;
